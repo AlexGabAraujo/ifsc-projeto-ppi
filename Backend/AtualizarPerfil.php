@@ -28,7 +28,6 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 try {
-    // Verificar se o e-mail já está em uso por outro usuário
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM usuario WHERE email = ? AND id != ?");
     $stmt->execute([$email, $userId]);
     if ($stmt->fetchColumn() > 0) {

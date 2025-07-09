@@ -39,7 +39,7 @@ try {
     echo json_encode(['success' => true, 'message' => 'Cadastro realizado com sucesso!']);
 
 } catch (\PDOException $e) {
-    error_log("Registration error: " . $e->getMessage()); // Log the error for debugging
+    error_log("Registration error: " . $e->getMessage());
     echo json_encode(['success' => false, 'message' => 'Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.']);
 }
 ?>

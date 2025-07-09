@@ -19,7 +19,6 @@ if ($confirmation !== 'EXCLUIR') {
 $userId = $_SESSION['user_id'];
 
 try {
-    // deletar do db
     $stmt = $pdo->prepare("DELETE FROM usuario WHERE id = ?");
     $stmt->execute([$userId]);
 
